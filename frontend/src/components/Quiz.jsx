@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import he from 'he';
 import ProfileMenu from './ProfileMenu';
-
 const Quiz = () => {
   const [questions, setQuestions] = useState([]);
   const [answers, setAnswers] = useState({});
@@ -17,13 +16,10 @@ useEffect(() => {
     setLoading(true);
     try {
       await new Promise(resolve => setTimeout(resolve, 500));
-
       const res = await fetch(`https://opentdb.com/api.php?amount=10&difficulty=${difficulty}&type=multiple`);
       if (!res.ok) throw new Error(`Trivia API error: ${res.status}`);
-
       const data = await res.json();
       if (!data.results || data.results.length === 0) throw new Error("No questions received.");
-
       const formatted = data.results.map((q, idx) => {
         const options = [...q.incorrect_answers, q.correct_answer]
           .sort(() => Math.random() - 0.5);
@@ -34,7 +30,6 @@ useEffect(() => {
           options: options.map(opt => he.decode(opt))
         };
       });
-
       setQuestions(formatted);
     } catch (err) {
       console.error("Failed to load quiz questions:", err);
@@ -42,11 +37,8 @@ useEffect(() => {
       setLoading(false);
     }
   };
-
   fetchQuestions();
 }, [difficulty]);
-
-
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user"));
     if (!user) {

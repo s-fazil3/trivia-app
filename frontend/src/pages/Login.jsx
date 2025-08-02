@@ -14,7 +14,7 @@ const LoginPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('/auth/login', credentials);
+      const res = await axios.post('https://trivia-quiz-backend1.onrender.com', credentials);
 
       if (res.data.token) {
         const token = res.data.token;

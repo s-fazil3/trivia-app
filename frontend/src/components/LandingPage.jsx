@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 
 const LandingPage = () => {
   const navigate = useNavigate();
-
   return (
     <div className="min-h-screen flex items-center justify-center  bg-gradient-to-br from-purple-900 via-indigo-800 to-blue-900 text-white font-poppins px-4 py-12">
       <div className="max-w-4xl mx-auto bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl p-10 text-center shadow-xl mb-16 animate-fadeIn">
@@ -31,5 +30,4 @@ const LandingPage = () => {
     </div>
   );
 };
-
 export default LandingPage;

@@ -21,7 +21,7 @@ const SignupPage = () => {
     }
 
     try {
-      const res = await axios.post('/auth/signup', { name, email, password });
+      const res = await axios.post('https://trivia-quiz-backend1.onrender.com', { name, email, password });
       setMessage("✅ " + res.data);
       setTimeout(() => navigate('/login'), 1500);
     } catch (err) {

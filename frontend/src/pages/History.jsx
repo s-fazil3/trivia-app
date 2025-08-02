@@ -5,7 +5,6 @@ const History = () => {
   const [history, setHistory] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
-
   useEffect(() => {
     const token = localStorage.getItem("token"); 
     const user = JSON.parse(localStorage.getItem("user")); 
@@ -15,7 +14,7 @@ const History = () => {
     }
     const fetchHistory = async () => {
       try {
-        const res = await axios.get('http://localhost:8090/api/scores/history', {
+        const res = await axios.get('https://trivia-quiz-backend1.onrender.com', {
           headers: {
             Authorization: `Bearer ${token}`,
           },

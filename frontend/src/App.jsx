@@ -7,8 +7,6 @@ import LoginPage from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Quiz from './components/Quiz';
 import History from './pages/History';
-
-
 function App() {
   return (
     <Router>

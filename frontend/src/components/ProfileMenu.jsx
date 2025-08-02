@@ -16,7 +16,7 @@ const ProfileMenu = () => {
     localStorage.removeItem("user");
     window.location.href = "/login"; 
   };
-
+  
   return (
     <div className="absolute top-4 right-4 z-50">
       <div className="relative">
